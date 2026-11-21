@@ -1,4 +1,4 @@
-CyberSecurity Task 3 – SQL Injection on DVWA (Low Security)
+SQL Injection on DVWA – Low Security
 
 Project Overview
 
@@ -6,7 +6,7 @@ This project demonstrates a SQL Injection vulnerability using Damn Vulnerable We
 
 Objective
 
-To understand SQL Injection, test two basic SQL injection payloads, and learn how developers can prevent this vulnerability.
+To understand how SQL Injection works, demonstrate two basic SQL injection payloads, and learn how developers can prevent this vulnerability.
 
 Tools Used
 
@@ -23,6 +23,10 @@ Test Environment
 - DVWA Security Level: Low
 - Module: SQL Injection
 
+Demonstration
+
+Two SQL injection payloads were tested in the DVWA User ID field.
+
 Payload 1
 
 ' OR '1'='1
@@ -35,30 +39,32 @@ Payload 2
 
 Result: Five user records were displayed.
 
+How SQL Injection Works
+
+SQL Injection occurs when an application places user input directly into an SQL query without safely handling it.
+
+The payloads introduced always-true conditions, changing the intended query and returning multiple records.
+
 Data Exposed
 
 The test displayed five sample user records, including their first names and surnames.
 
-How SQL Injection Works
-
-SQL Injection occurs when an application includes user input directly in an SQL query without safely handling it. The tested payloads introduced always-true conditions, causing multiple records to be returned.
-
 Prevention
 
-- Use prepared statements and parameterised queries.
-- Validate user input.
-- Avoid directly concatenating user input into SQL queries.
-- Apply least-privilege database permissions.
+Developers can prevent SQL Injection by:
 
-Conclusion
-
-Both payloads successfully demonstrated SQL Injection in DVWA at Low security.
+- Using prepared statements and parameterised queries.
+- Validating user input.
+- Avoiding direct concatenation of user input into SQL queries.
+- Applying least-privilege database permissions.
 
 Screenshots
 
-- payload1_result.png
-- payload2_result.png
+- "payload1_result.png"
+- "payload2_result.png"
 
-Ethical Note
+Conclusion
 
-All testing was performed only on my own locally hosted DVWA lab for educational purposes.
+The experiment demonstrated how SQL Injection can expose database records when user input is not handled safely.
+
+Ethical Note: Testing was performed only on a locally hosted DVWA lab for educational purposes.
